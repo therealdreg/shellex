@@ -5,7 +5,9 @@ Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII m
 
 Here is shellex. If the shellcode can be compiled in a C compiler shellex can convert it.
 
-Just execute shellex, paste the shellcode c-string and press ENTER. To end use Control+Z(Windows)/Control+D(Linux)
+Just execute shellex, paste the shellcode c-string and press ENTER. 
+
+To end use Control+Z(Windows)/Control+D(Linux)
 
 Converting c-shellcode-multi-line-hex+mixed_ascii (pay attention in the mixed part **\x68//sh\x68/bin\x89**):
 ```
