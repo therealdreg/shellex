@@ -1,7 +1,9 @@
 # shellex
 C-shellcode to hex converter
 
-Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) Here is shellex. If the shellcode can be compiled in a C compiler shellex can convert it.
+Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
+
+Here is shellex. If the shellcode can be compiled in a C compiler shellex can convert it.
 
 Just execute shellex, paste the shellcode c-string and press ENTER. To end use Control+Z(Windows)/Control+D(Linux)
 
