@@ -44,6 +44,37 @@ Do you need the shellex output as a new c-shellcode-string? just use -h paramete
 \x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80
 ```
 
+# Installation
 
+```
+git clone https://github.com/David-Reguera-Garcia-Dreg/shellex.git
+```
+
+## For Windows:
+
+binary: shellex\bins\shellex.exe
+
+## For Linux
+
+Deps:
+
+```
+sudo apt-get install tcc
+```
+
+binary: shellex/linuxbins/shellex
+
+# Compilation
+
+For Windows just use Visual Studio 2013
+* https://my.visualstudio.com/Downloads?q=visual%20studio%202013&wt.mc_id=o~msft~vscom~older-downloads
+* https://go.microsoft.com/fwlink/?LinkId=532495&clcid=0x409
+
+For Linux just: 
+```
+cd shellex/shellex
+gcc -o shellex shellex.c
+./shellex
+```
 
 
