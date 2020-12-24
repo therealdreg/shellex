@@ -1,5 +1,5 @@
 # shellex
-**WARNING**: the ugliest code in the world, I have developed this just for my own needs, you can improve the project via PR.
+**WARNING**: the ugliest code in the world
 
 C-shellcode to hex converter
 
