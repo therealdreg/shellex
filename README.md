@@ -1,4 +1,6 @@
 # shellex
+WARNING: the ugliest code in the world, I have developed this just for my own needs, you can improve the project via PR.
+
 C-shellcode to hex converter
 
 Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
