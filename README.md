@@ -3,7 +3,7 @@
 
 C-shellcode to hex converter. 
 
-Handy tool for paste & execute shellcodes in gdb, windbg, radare2, ollydbg, x64dbg and immunity debugger.
+Handy tool for paste & execute shellcodes in gdb, windbg, radare2, ollydbg, x64dbg, immunity debugger & 010 editor.
 
 Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
 
@@ -23,8 +23,6 @@ shellex output:
 ```
 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
 ```
-
-Now you can copy the output & paste it to Immunity Debugger, ollydbg, x64dbg, 010 hexadecimal editor etc.
 
 Converting c-shellcode-multi-line-with-comments:
 ```
@@ -60,7 +58,10 @@ git clone https://github.com/David-Reguera-Garcia-Dreg/shellex.git
 
 ### For Windows:
 
-binary: shellex\bins\shellex.exe
+binary: 
+```
+shellex\bins\shellex.exe
+```
 
 ### For Linux
 
@@ -70,7 +71,11 @@ Deps:
 sudo apt-get install tcc
 ```
 
-binary: shellex/linuxbins/shellex
+binary: 
+
+```
+shellex/linuxbins/shellex
+```
 
 ## Paste & Execute shellcode in ollydbg, x64dbg, immunity debugger
 
