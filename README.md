@@ -70,7 +70,13 @@ sudo apt-get install tcc
 
 binary: shellex/linuxbins/shellex
 
-## Executing shellcode in gdb 
+## Paste & Execute shellcode in ollydbg, x64dbg, immunity debugger
+
+Just use my xshellex plugin:
+
+https://github.com/David-Reguera-Garcia-Dreg/xshellex
+
+## Paste & Execute shellcode in gdb 
 
 * execute shellex 
 * enter the shellcode:
@@ -84,7 +90,7 @@ binary: shellex/linuxbins/shellex
 ```
 shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
 ```
-* write the shellcode to a file as raw binary data with "echo":
+* write the C-Hex-String to a file as raw binary data with "echo":
 ```
 echo -n "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80" > /tmp/sc
 ```
@@ -105,6 +111,46 @@ for 64 bits:
 restore /tmp/sc binary $rip
 x/30b $rip
 x/15i $rip
+```
+
+Done! You can debug the shellcode
+
+## Paste & Execute shellcode in windbg
+
+* execute shellex 
+* enter the shellcode:
+```
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+```
+* press enter
+* press Control+D
+* convert the shellex output to raw binary data with certutil:
+```
+echo 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80 > C:\Users\Dreg\sc.hex
+certutil -f -decodeHex c:\Users\Dreg\sc.hex c:\Users\Dreg\sc
+del C:\Users\Dreg\sc.hex
+```
+
+certutil output:
+```
+Input Length = 92
+Output Length = 30
+CertUtil: -decodehex command completed successfully.
+```
+
+The lenght of our shellcode is 30, then use L0n30 in windbg. 
+
+Write the binary file to the current instruction pointer:
+
+for 32 bits:
+```
+.readmem C:\Users\Dreg\sc @eip L0n30
+```
+
+for 64 bits:
+```
+.readmem C:\Users\Dreg\sc @rip L0n30
 ```
 
 Done! You can debug the shellcode
