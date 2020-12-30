@@ -124,7 +124,7 @@ x/30b is the size in bytes of the shellcode, you can get the size with:
 wc -c /tmp/sc
 ```
 
-x/15i is the number of instructions to display, you can get the size with:
+x/15i is the number of instructions to display, you can get the correct number (maybe) with:
 ```
 sudo apt-get install nasm
 ```
