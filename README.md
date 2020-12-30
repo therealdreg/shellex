@@ -191,7 +191,7 @@ for 64 bits:
 ```
 shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
 ```
-* write the C-Hex-String using the "w" command:
+* write the C-Hex-String in radare2 using the "w" command:
 
 For 32 bits:
 ```
