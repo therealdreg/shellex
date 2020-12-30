@@ -70,6 +70,45 @@ sudo apt-get install tcc
 
 binary: shellex/linuxbins/shellex
 
+## Executing shellcode in gdb 
+
+* execute shellex 
+* enter the shellcode:
+```
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+```
+* press enter
+* press Control+D
+* convert the shellex output to C-Hex-String with shellex -h:
+```
+shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
+```
+* write the shellcode to a file as raw binary data with "echo":
+```
+echo -n "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80" > /tmp/sc
+```
+* gdb /bin/ls
+* starti
+
+Write the binary file to the current instruction pointer:
+
+for 32 bits:
+```
+restore /tmp/sc binary $eip
+x/30b $eip
+x/15i $eip
+```
+
+for 64 bits:
+```
+restore /tmp/sc binary $rip
+x/30b $rip
+x/15i $rip
+```
+
+Done! You can debug the shellcode
+
 ## Compilation
 
 For Windows just use Visual Studio 2013
