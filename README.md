@@ -1,7 +1,9 @@
 # shellex
 **WARNING**: the ugliest code in the world
 
-C-shellcode to hex converter. Handy tool for paste & execute shellcodes in gdb, windbg, ollydbg, x64dbg, immunity debugger
+C-shellcode to hex converter. 
+
+Handy tool for paste & execute shellcodes in gdb, windbg, ollydbg, x64dbg and immunity debugger.
 
 Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
 
