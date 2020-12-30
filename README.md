@@ -154,6 +154,23 @@ ndisasm -b64 /tmp/sc | wc -l
 ```
 * press enter
 * press Control+D
+
+## via eb
+
+For small shellcodes eb can be fine, just use shellex output with eb command (thx Axel Souchet @0vercl0k for the hint)
+
+For 32 bits:
+```
+eb @eip 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
+``` 
+
+For 64 bits:
+```
+eb @rip 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
+``` 
+
+## via file
+
 * convert the shellex output to raw binary data with certutil:
 ```
 echo 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80 > C:\Users\Dreg\sc.hex
