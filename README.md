@@ -203,6 +203,12 @@ For 64 bits:
 w \x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80 @rip
 ```
 
+Check if the shellcode is well-pasted, disassembling 30 bytes of instructions (the total size of shellcode):
+
+```
+pD 30
+```
+
 ## Compilation
 
 For Windows just use Visual Studio 2013
