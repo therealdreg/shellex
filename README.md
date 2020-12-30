@@ -115,6 +115,30 @@ x/15i $rip
 
 Done! You can debug the shellcode
 
+Notes:
+
+x/30b is the size in bytes of the shellcode, you can get the size with: 
+```
+wc -c /tmp/sc
+```
+
+x/15i is the number of instructions to display, you can get the size with:
+```
+sudo apt-get install nasm
+```
+
+For 32 bits:
+```
+ndisasm -b32 /tmp/sc
+ndisasm -b32 /tmp/sc | wc -l
+```
+
+For 64 bits:
+```
+ndisasm -b64 /tmp/sc
+ndisasm -b64 /tmp/sc | wc -l
+```
+
 ## Paste & Execute shellcode in windbg
 
 * execute shellex 
