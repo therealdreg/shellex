@@ -169,6 +169,35 @@ For 64 bits:
 patch byte $rip 0x6A 0x17 0x58 0x31 0xDB 0xCD 0x80 0x6A 0x0B 0x58 0x99 0x52 0x68 0x2F 0x2F 0x73 0x68 0x68 0x2F 0x62 0x69 0x6E 0x89 0xE3 0x52 0x53 0x89 0xE1 0xCD 0x80
 ```
 
+Execute context command and check if the disasm is correct
+
+## Paste & Execute shellcode in gdb-peda
+
+* execute shellex 
+* enter the shellcode:
+```
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+```
+* press enter
+* press Control+D
+* convert the shellex output to C-Hex-String with shellex -h:
+```
+shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
+```
+
+For 32 bits:
+```
+patch $eip "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80"
+```
+
+For 64 bits:
+```
+patch $rip "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80"
+```
+
+Execute context command and check if the disasm is correct
+
 ## Paste & Execute shellcode in windbg
 
 * execute shellex 
