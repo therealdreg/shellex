@@ -238,7 +238,7 @@ The output of last command is 30, Now use pD command in radare2:
 pD 30
 ```
 
-## Non interactive mode conversor
+## Non interactive mode
 
 Converting "\x6a\x17\x58\x31\xdb\xcd\x80" in Linux:
 ```
@@ -250,7 +250,7 @@ Converting "\x6a\x17\x58\x31\xdb\xcd\x80" in Windows:
 echo "\x6a\x17\x58\x31\xdb\xcd\x80" | shellex.exe
 ```
 
-Via file in Windows:
+Via multi-line-file in Windows:
 ```
 C:\Users\Dreg\Desktop\shellex\bins>type sc.txt
 "\x6a\x17\x58\x31\xdb\xcd\x80"
@@ -258,7 +258,7 @@ C:\Users\Dreg\Desktop\shellex\bins>type sc.txt
 C:\Users\Dreg\Desktop\shellex\bins>type sc.txt | shellex.exe
 ```
 
-Via file in Linux:
+Via multi-line-file in Linux:
 ```
 dreg@fr33project# cat sc.txt
 "\x6a\x17\x58\x31\xdb\xcd\x80"
