@@ -250,6 +250,22 @@ Converting "\x6a\x17\x58\x31\xdb\xcd\x80" in Windows:
 echo "\x6a\x17\x58\x31\xdb\xcd\x80" | shellex.exe
 ```
 
+Via file in Windows:
+```
+C:\Users\Dreg\Desktop\shellex\bins>type sc.txt
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+C:\Users\Dreg\Desktop\shellex\bins>type sc.txt | shellex.exe
+```
+
+Via file in Linux:
+```
+dreg@fr33project# cat sc.txt
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+dreg@fr33project# cat sc.txt | shellex
+```
+
 ## Compilation
 
 For Windows just use Visual Studio 2013
