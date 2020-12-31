@@ -238,6 +238,18 @@ The output of last command is 30, Now use pD command in radare2:
 pD 30
 ```
 
+## Non interactive mode conversor
+
+Converting "\x6a\x17\x58\x31\xdb\xcd\x80" in Linux:
+```
+echo "\"\\x6a\\x17\\x58\\x31\\xdb\\xcd\\x80\"" | shellex
+```
+
+Converting "\x6a\x17\x58\x31\xdb\xcd\x80" in Windows:
+```
+echo "\x6a\x17\x58\x31\xdb\xcd\x80" | shellex.exe
+```
+
 ## Compilation
 
 For Windows just use Visual Studio 2013
