@@ -118,7 +118,7 @@ print("done!")
 * For 32 bits use: **address = idc.get_reg_value("eip")**
 * For 64 bits use: **address = idc.get_reg_value("rip")**
 
-* Debug a program in IDA PRO
+Debug a program in IDA PRO:
 * Go to File -> Script command...
 * in Script Language select: **Python**
 * Paste the IDAPYTHON Script
