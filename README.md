@@ -100,7 +100,7 @@ shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 
 
 * make your own IDAPYTHON Script:
 
-'''
+```
 def writebytes(dest, str):
   for i, c in enumerate(str):
     idc.patch_byte(dest+i, ord(c));
@@ -112,7 +112,7 @@ shellcode = "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x6
 writebytes(address, shellcode)
 
 print("done!")
-'''
+```
 
 * Copy the C-Hex-String to shellcode variable.
 * For 32 bits use: **address = idc.get_reg_value("eip")**
