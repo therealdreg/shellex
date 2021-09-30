@@ -3,7 +3,7 @@
 
 C-shellcode to hex converter. 
 
-Handy tool for paste & execute shellcodes in gdb, windbg, radare2, ollydbg, x64dbg, immunity debugger & 010 editor.
+Handy tool for paste & execute shellcodes in IDA PRO, gdb, windbg, radare2, ollydbg, x64dbg, immunity debugger & 010 editor.
 
 Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
 
@@ -82,6 +82,57 @@ shellex/linuxbins/shellex
 Just use my xshellex plugin:
 
 https://github.com/David-Reguera-Garcia-Dreg/xshellex
+
+## Paste & Execute shellcode in IDA PRO with IDAPYTHON
+
+* execute shellex 
+* enter the shellcode:
+```
+"\x6a\x17\x58\x31\xdb\xcd\x80"
+"\x6a\x0b\x58\x99\x52\x68//sh\x68/bin\x89\xe3\x52\x53\x89\xe1\xcd\x80"
+```
+* press enter
+* press Control+D
+* convert the shellex output to C-Hex-String with shellex -h:
+```
+shellex -h 6A 17 58 31 DB CD 80 6A 0B 58 99 52 68 2F 2F 73 68 68 2F 62 69 6E 89 E3 52 53 89 E1 CD 80
+```
+
+* make your own IDAPYTHON Script:
+
+'''
+def writebytes(dest, str):
+  for i, c in enumerate(str):
+    idc.patch_byte(dest+i, ord(c));
+
+address = idc.get_reg_value("eip")
+
+shellcode = "\x6A\x17\x58\x31\xDB\xCD\x80\x6A\x0B\x58\x99\x52\x68\x2F\x2F\x73\x68\x68\x2F\x62\x69\x6E\x89\xE3\x52\x53\x89\xE1\xCD\x80"
+
+writebytes(address, shellcode)
+
+print("done!")
+'''
+
+* Copy the C-Hex-String to shellcode variable.
+* For 32 bits use: **address = idc.get_reg_value("eip")**
+* For 64 bits use: **address = idc.get_reg_value("rip")**
+
+* Debug a program in IDA PRO
+* Go to File -> Script command...
+* in Script Language select: **Python**
+* Paste the IDAPYTHON Script
+* Click Run
+
+Now you can debug the shellcode with F7, but maybe the Disasm Window shows the shellcode as db's. 
+
+Here the solution:
+* Select the shellcode bytes in the disasm window
+* Right click -> Undefine
+* Select again the shellcode bytes in the disasm window
+* Right click -> Code -> **Force** -> Yes
+
+Done! You can view the shellcode disassembled and debug it with F7.
 
 ## Paste & Execute shellcode in gdb 
 
