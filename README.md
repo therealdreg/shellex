@@ -3,6 +3,8 @@
 
 C-shellcode to hex converter. 
 
+Please, consider make a donation: https://github.com/sponsors/therealdreg
+
 Handy tool for paste & execute shellcodes in IDA PRO, gdb, windbg, radare2, ollydbg, x64dbg, immunity debugger & 010 editor.
 
 Are you having problems converting C-shellcodes to HEX (maybe c-comments+ASCII mixed?) 
