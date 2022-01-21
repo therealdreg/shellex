@@ -55,7 +55,7 @@ Do you need the shellex output as a new c-shellcode-string? just use -h paramete
 ## Installation
 
 ```
-git clone https://github.com/David-Reguera-Garcia-Dreg/shellex.git
+git clone https://github.com/therealdreg/shellex.git
 ```
 
 ### For Windows:
@@ -83,7 +83,7 @@ shellex/linuxbins/shellex
 
 Just use my xshellex plugin:
 
-https://github.com/David-Reguera-Garcia-Dreg/xshellex
+https://github.com/therealdreg/xshellex
 
 ## Paste & Execute shellcode in IDA PRO with IDAPYTHON
 
